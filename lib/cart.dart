@@ -37,7 +37,7 @@ class CartPage extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.all(8.0),
       child: ListTile(
-        leading: Image.network(product.image, fit: BoxFit.cover),
+        leading: Image.asset(product.image, fit: BoxFit.cover),
         title: Text(product.title),
         subtitle: Text(product.description), // Manejar null con un valor por defecto
         trailing: IconButton(

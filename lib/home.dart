@@ -9,36 +9,36 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<String> imgList = [
-    'assets/imagenes_productos/Canon-EOS-5D-Mark-IV-con-24-105mm-f4L-II-17-600x600.jpg',
-    'assets/imagenes_productos/telefono2.webp',
-    'assets/imagenes_productos/laptop2.png',
+    'imagenes/imagenes_productos/Canon-EOS-5D-Mark-IV-con-24-105mm-f4L-II-17-600x600.jpg',
+    'imagenes/imagenes_productos/telefono2.webp',
+    'imagenes/imagenes_productos/laptop2.png',
   ];
 
   final List<Product> popularProducts = [
     Product(
       title: 'Laptop Acer GW',
-      image: 'assets/imagenes_productos/Captura de pantalla 2024-06-05 154837.png',
+      image: 'imagenes/imagenes_productos/Captura de pantalla 2024-06-05 154837.png',
       description: 'Core i5 12va, 512gb, 8gb, 14pulg touch',
       category: 'Laptops',
       price: 534,
     ),
     Product(
       title: 'Xiaomi 13 Ultra',
-      image: 'assets/imagenes_productos/telefono1.webp',
+      image: 'imagenes/imagenes_productos/telefono1.webp',
       description: '16GB + 1024GB + Snapdragon 8 Gen 2 3.2GHz',
       category: 'Smartphones',
       price: 1049,
     ),
     Product(
       title: 'Cámara Canon EOS T7',
-      image: 'assets/imagenes_productos/Canon-EOS-T7-con-lente-18-55mm-1-600x529.jpg.webp',
+      image: 'imagenes/imagenes_productos/Canon-EOS-T7-con-lente-18-55mm-1-600x529.jpg.webp',
       description: 'La EOS 2000D (Rebel T7 en América) es la sucesora de la Canon EOS 1300D / Rebel T6.',
       category: 'Cameras',
       price: 50,
     ),
     Product(
       title: 'Redmi Buds 4 Active',
-      image: 'assets/imagenes_productos/accesorio1.webp',
+      image: 'imagenes/imagenes_productos/accesorio1.webp',
       description: 'Bluetooth® 5.3 + Hasta 28 horas + Puerto de carga: Tipo-C',
       category: 'Accessories',
       price: 34.99,
