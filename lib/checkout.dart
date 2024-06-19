@@ -9,7 +9,11 @@ class CheckoutPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Checkout'),
+        title: Text(
+          'Checkout',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: Colors.teal,
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
@@ -17,17 +21,41 @@ class CheckoutPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
-              decoration: InputDecoration(labelText: 'Shipping Address'),
+              decoration: InputDecoration(
+                labelText: 'Shipping Address',
+                border: OutlineInputBorder(),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.teal),
+                ),
+              ),
             ),
+            SizedBox(height: 16),
             TextField(
-              decoration: InputDecoration(labelText: 'Credit Card Number'),
+              decoration: InputDecoration(
+                labelText: 'Credit Card Number',
+                border: OutlineInputBorder(),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.teal),
+                ),
+              ),
+              keyboardType: TextInputType.number,
             ),
             SizedBox(height: 20),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+              ),
               onPressed: () {
                 _showOrderConfirmationDialog(context, cart);
               },
-              child: Text('Place Order'),
+              child: Text(
+                'Place Order',
+                style: TextStyle(fontSize: 18, color: Colors.white),
+              ),
             ),
           ],
         ),
@@ -47,9 +75,15 @@ class CheckoutPage extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Cancel'),
+              child: Text(
+                'Cancel',
+                style: TextStyle(color: Colors.grey),
+              ),
             ),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal,
+              ),
               onPressed: () {
                 _completeOrder(context, cart);
               },

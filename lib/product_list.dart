@@ -100,7 +100,8 @@ class _ProductListPageState extends State<ProductListPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Products'),
+        title: Text('Products', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        backgroundColor: Colors.teal,
         actions: [
           PopupMenuButton<String>(
             onSelected: (String category) {
@@ -126,9 +127,9 @@ class _ProductListPageState extends State<ProductListPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Category: $selectedCategory'),
+                Text('Category: $selectedCategory', style: TextStyle(color: Colors.teal, fontWeight: FontWeight.bold)),
                 IconButton(
-                  icon: Icon(Icons.filter_list),
+                  icon: Icon(Icons.filter_list, color: Colors.teal),
                   onPressed: () {
                     _showFilterDialog();
                   },
@@ -153,14 +154,19 @@ class _ProductListPageState extends State<ProductListPage> {
     return Card(
       margin: const EdgeInsets.all(8.0),
       elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: ListTile(
-        leading: Image.asset(product.image, fit: BoxFit.cover),
-        title: Text(product.title),
+        leading: ClipRRect(
+          borderRadius: BorderRadius.circular(8.0),
+          child: Image.asset(product.image, fit: BoxFit.cover),
+        ),
+        title: Text(product.title, style: TextStyle(fontWeight: FontWeight.bold)),
+        subtitle: Text(product.description, maxLines: 2, overflow: TextOverflow.ellipsis),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             IconButton(
-              icon: Icon(Icons.add_shopping_cart),
+              icon: Icon(Icons.add_shopping_cart, color: Colors.teal),
               onPressed: () {
                 Provider.of<CartProvider>(context, listen: false).addItem(product);
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -169,6 +175,10 @@ class _ProductListPageState extends State<ProductListPage> {
               },
             ),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+              ),
               onPressed: () {
                 Navigator.pushNamed(
                   context,
@@ -176,7 +186,7 @@ class _ProductListPageState extends State<ProductListPage> {
                   arguments: product,
                 );
               },
-              child: Text('View'),
+              child: Text('View', style: TextStyle(color: Colors.white)),
             ),
           ],
         ),
@@ -229,13 +239,13 @@ class _ProductListPageState extends State<ProductListPage> {
                 });
                 Navigator.of(context).pop();
               },
-              child: Text('Clear'),
+              child: Text('Clear', style: TextStyle(color: Colors.teal)),
             ),
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Close'),
+              child: Text('Close', style: TextStyle(color: Colors.teal)),
             ),
           ],
         );
